@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'count.css' %}" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <h1>[글자수 세기]</h1>
+        <h2>요구하는 글자수에 맞는지 확인해보세요.</h2>
+      </div>
+
+      <div class="middle">
+        <div class="title">
+          <span>공백 포함 :총 <stong>N</stong> 자</span>
+          <span>단어수 :총 <stong>N</stong> 자 </span>
+        </div>
+        <div class="content">
+          <form class="form" action="{% url 'result' %}" method="POST">
+            {% csrf_token %}
+            <textarea
+              class="textarea"
+              name="text"
+              placeholder="글을 직접 작성하거나, 복사해서 붙여 넣어주시면 글자수 계산이 됩니다 "
+            ></textarea>
+            <br />
+            <input class="input" type="submit" value="제출하기" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- cols="30" rows="10" -->

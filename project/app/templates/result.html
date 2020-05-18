@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'result.css' %}" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <h1>[글자수 세기]</h1>
+        <h2>요구하는 글자수에 맞는지 확인해보세요.</h2>
+      </div>
+
+      <div class="middle">
+        <div class="title">
+          <span>공백 포함 :총 <stong>{{total_len}}</stong> 자</span>
+          <!-- <span>공백 제외 :총 <stong>{{strip_len}}</stong> 자 </span> -->
+          <span>단어수 :총 <stong>{{word_count}}</stong> 자 </span>
+        </div>
+        <div class="content">{{text_input}} <br /></div>
+      </div>
+    </div>
+  </body>
+</html>
