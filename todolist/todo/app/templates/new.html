@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'new.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="box">
+        <input class="title" type="text" name="title" placeholder="제목" />
+        <input class="content" type="text" name="content" placeholder="내용" />
+        <input class="time" type="date" name="time" />
+        <button class="submit" type="submit">작성하기</button>
+      </div>
+    </form>
+  </body>
+</html>
