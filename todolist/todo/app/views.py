@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Post
+from .models import Post, Comment
 
 # Create your views here.
 def home(request):
@@ -25,6 +25,13 @@ def new(request):
 
 def detail(request, post_pk):
     post = Post.objects.get(pk=post_pk)
+
+    if request.method == "POST":
+        Comment.objects.create(
+            post = post,
+            content = request.POST['content']
+        )
+        return redirect('detail', post_pk)
     return render(request, 'detail.html',{'post':post})
 
 def edit(request, post_pk):
@@ -45,3 +52,8 @@ def delete(request, post_pk):
     post = Post.objects.get(pk=post_pk)
     post.delete()
     return redirect('home')
+
+def delete_comment(request, post_pk, comment_pk):
+    comment = Comment.objects.get(pk=comment_pk)
+    comment.delete()
+    return redirect('detail', post_pk)

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}제목{% endblock %}</title>
+  </head>
+  <body>
+    {% block content %} {% for post in posts %}
+    <div>
+      <ul>
+        <li>
+          <a href="{% url 'detail' post.pk %}">{{ post.title }}</a>
+        </li>
+      </ul>
+    </div>
+    {% endfor %}
+    <a href="{% url 'new' %}">글 쓰러가기</a>
+    {% endblock content %}
+  </body>
+</html>
