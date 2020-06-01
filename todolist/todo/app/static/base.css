@@ -1,0 +1,26 @@
+.nav-bar{
+    width: 50%;
+    height: 50px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    /* border: black 1px solid; */
+    margin-bottom: 5px;
+    border: 1px black solid;
+    padding: 10px;
+    background-color: #f7f2e0;
+
+}
+.nav-item{
+    width: 50%;
+    /* height: 200px; */
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    /* border: black 1px solid; */
+    margin-bottom: 5px;
+    border: 1px black solid;
+    padding: 2px;
+    background-color: #f7f2e0;
+
+}

@@ -29,20 +29,25 @@
       <div class="time">남은 시간 : {{post.time|timeuntil}}</div>
       <div class="link">
         <a href="{% url 'home' %}">홈으로</a>
+        {% if user.is_authenticated and post.author.pk == user.pk %}
         <a href="{% url 'edit' post.pk %}">수정하기</a>
         <a href="{% url 'delete' post.pk %}">삭제하기</a>
+        {% endif %}
       </div>
     </div>
     {% for comment in post.comments.all %}
     <li>{{ comment.content }}</li>
+    {% if user.is_authenticated and post.author.pk == user.pk %}
     <a href="{% url 'delete_comment' post.pk comment.pk %}">댓글삭제</a>
+    {% endif %}
     {% endfor %}
-
+    {% if user.is_authenticated %}
     <form action="" method="POST">
       {% csrf_token %}
       <input type="text" name="content" placeholder="댓글을 입력해주세요" />
       <button type="submit">댓글 쓰기</button>
     </form>
+    {% endif %}
     {% endblock content %}
   </body>
 </html>

@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.kakao',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +124,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#social login 설정
+
+# AUTHENTICATION_BACKENDS = (
+#     'django.contrib.auth.backends.ModelsBackend',
+#     'allauth.account.auth_backends.AuthenticationBackend',
+# )
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
