@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "task1.css"/>
+    <title>글자 수 세기</title>
+</head>
+<body>
+    <h1>글자 수 세기</h1>
+    <textarea id="text" cols="30" rows="10"></textarea>
+    <div class = "result_box">
+        <div class="result_text">
+            <p>공백 포함 글자 수: <span id="space"></span></p>
+            <p>공백 제외 글자 수: <span id="nospace"></span></p>
+        </div>
+    </div>
+    <script>
+
+        const text = document.querySelector("#text")
+        const space = document.querySelector('#space')
+        const nospace = document.querySelector('#nospace')
+
+        const lengthCheck = function() {
+            let input = text.value
+
+            space.textContent = input.length
+            nospace.textContent = input.replace(/ /g,"").length 
+        }
+
+        text.addEventListener('keyup', lengthCheck)
+    </script>
+</body>
+</html>

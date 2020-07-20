@@ -1,0 +1,28 @@
+  
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 27px;
+    font-weight: 900;
+    color: black;
+}
+
+#text {
+    width: 500px;
+    height: 300px;
+}
+
+.result_box {
+    width: 400px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.result_text {
+    margin-right: 20px;
+}
